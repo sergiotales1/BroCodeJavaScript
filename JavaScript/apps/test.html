@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>test</title>
+</head>
+<body>
+   
+   <h1>Number Guessing Game</h1>
+   <p>Pick a # between 1 - 10</p>
+   <label>Enter your guess:</label>
+
+   <input type="text" id="myInput">
+   <input type="submit" id="mySubmit">
+
+   <script>
+      const answer = Math.floor(Math.random() * 10 + 1)
+      let guesses = 0
+
+      document.getElementById('mySubmit').onclick = () => {
+         let guess = document.getElementById('myInput').value
+         guesses += 1
+
+         if(guess == answer){
+            window.alert(`The answer was ${answer} and you took ${guesses} guesses!`)
+         } else if(guess > answer) {
+            window.alert(`Too large!`)
+         } else {
+            window.alert('Too small!')
+         }
+
+         guess == answer ? window.location.reload() : document.getElementById('myInput').value = ""
+      }
+   </script>
+</body>
+</html>

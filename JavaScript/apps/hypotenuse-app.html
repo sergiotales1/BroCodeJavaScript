@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hypotenuse</title>
+</head>
+<body style="padding: 20px;">
+   <label>Side A:</label>
+   <input type="text" id="aInput">
+
+   <label>Side B:</label>
+   <input type="text" id="bInput">
+
+   <button id="button">Submit</button>
+
+   <label id="cSide"></label>
+
+   <script>
+      /*
+      let a = window.prompt('Write the A Side: ')
+      a = Number(a)
+
+      let b = window.prompt('Write the B Side: ')
+      b = Number(b)
+
+      c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))
+      */
+      document.getElementById('button').onclick = () => {
+         let a = document.getElementById('aInput').value
+         a = Number(a)
+         let b = document.getElementById('bInput').value
+         b = Number(b)
+         
+         let c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))
+         
+         document.getElementById('cSide').innerHTML = `Side c: ${c}`
+      }
+
+      
+
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Counter</title>
+   <style>
+      body {
+         height: 100vh;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+      }
+
+      div {
+         display: flex;
+      }
+
+      button {
+         margin: 5px;
+         padding: 15px;
+      }
+
+      #countLabel {
+         font-size: 50px;
+      }
+
+      .positive {
+         color: green;
+      }
+
+      .negative {
+         color: red;
+      }
+
+      .black {
+         color: black;
+      }
+   </style>
+</head>
+<body>
+   <label id="countLabel">0</label>
+   <div>
+      <button id="decreaseBtn">Decrease</button>
+      <button id="resetBtn">Reset</button>
+      <button id="increaseBtn">Increase</button>
+   </div>
+
+
+   <script>
+      let count = 0;
+      const labelEl = document.getElementById('countLabel')
+      
+      function labelColor() {
+         if(count < 0 ) {
+            labelEl.className = 'negative'
+         } else if(count === 0) {
+            labelEl.className = 'black'
+         } else {
+            labelEl.className = 'positive'
+         }
+      }
+
+      document.getElementById('decreaseBtn').onclick = () => {
+         count-=1;
+         document.getElementById('countLabel').innerHTML = count;
+
+         labelColor()
+      }
+
+      document.getElementById('resetBtn').onclick = () => {
+         count=0;
+         document.getElementById('countLabel').innerHTML = count;
+
+         labelColor()
+      }
+
+      document.getElementById('increaseBtn').onclick = () => {
+         count+=1;
+         document.getElementById('countLabel').innerHTML = count;
+
+         labelColor()
+      }
+
+      
+   </script>
+</body>
+</html>

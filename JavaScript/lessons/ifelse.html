@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>If - Else</title>
+</head>
+<body>
+   <label for="myCheckBox">subscribe</label>
+   <input type="checkbox" id="myCheckBox"><br>
+
+   <label for="visa">Visa</label>
+   <input type="radio" name="radio" id="visa">
+   <label for="masterCard">MasterCard</label>
+   <input type="radio" name="radio" id="masterCard">
+   <label for="payPal">Paypal</label>
+   <input type="radio" name="radio" id="payPal">
+
+   <br>
+
+   <button id="myButton">submit</button>
+
+
+
+   <script>
+      document.getElementById("myButton").onclick = () => {
+         let checkEl = document.getElementById("myCheckBox")
+
+         checkEl.checked === true ? console.log("You subscribed") : console.log("You are not subscribed")
+         
+
+         let visa = document.getElementById("visa")
+         let masterCard = document.getElementById("masterCard")
+         let payPal = document.getElementById("payPal")
+
+         
+         if(visa.checked) {
+            console.log("you choose visa as a payment method")
+         } else if(masterCard.checked) {
+            console.log("you choose Mastercard as a payment method")
+         } else if(payPal.checked){
+            console.log("you choose paypal as a payment method")
+         } else {
+            console.log("you didn't choose any option as a payment method")
+         }
+         
+      }
+   </script>
+</body>
+</html>
