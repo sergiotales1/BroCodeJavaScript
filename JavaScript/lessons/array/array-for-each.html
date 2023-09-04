@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>array for each</title>
+   <script>
+      // array.forEach() = executes a provided callback function
+      //                   once for each array element
+
+      // forEach() calls a function for each element in an array
+
+
+      let students = ["spongebob", "patrick", "squidward"]
+      
+      students.forEach(capitalize)
+      students.forEach(print)
+
+      function capitalize(element, index, array){
+         array[index] = element[0].toUpperCase() + element.substring(1)
+      }
+
+      function print(element){
+         console.log(element)
+      }
+   </script>
+
+</head>
+<body>
+   
+</body>
+</html>

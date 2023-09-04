@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Spread</title>
+   <script>
+      // spread operator = allows an iterable such as an
+      // ...                 array or string to be expanded
+      //                   in places where zero or more arguments
+      //                   are expected (unpack the elements)
+
+      let numbers = [1, 12, 3, 4, 5, 6, 7, 8, 9]
+      let maximum = Math.max(...numbers) // if we just use the array will print not a number
+      console.log(maximum)
+
+      let class1 = ["Spongebob", "Patrick", "Sandy"]
+      let class2 = ["Squidward", "Mr.Krabs", "Plankton"]
+
+      class1.push(class2)
+      console.log(class1) // if i use only the array with push method i will have a array (class1) with 3 values and one array (class2) inside
+      class1.pop()
+
+      // soo i can use the spread operator to iterate the numbers and add them individually to class1 array
+      class1.push(...class2)
+      console.log(class1)
+   </script>
+</head>
+<body>
+   
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>MAP</title>
+   <script>
+
+      // the difference between for each and map is that foreach only interacts with each element using a callback function while map does the same thing while create an array after the interaction
+      let numbers = [2,3]
+      let squares = numbers.map(square)
+
+      function square(element){
+         return Math.pow(element, 2)
+      }
+
+      console.log(squares)
+
+      let names = ["abel", "gabriel", "luna"]
+      let capitalizedNames = names.map(capitalize)
+      console.log(capitalizedNames)
+      capitalizedNames.forEach(print)
+
+      function capitalize(element){
+         let capitalizedName = element[0].toUpperCase() + element.substring(1)
+         return capitalizedName
+      } 
+
+      function print(element){
+         console.log(element)
+      }
+
+   </script>
+</head>
+<body>
+   
+</body>
+</html>

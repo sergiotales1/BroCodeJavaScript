@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <label>Enter a temperature:</label>
+   <br>
+
+   <input type="text" id="myTemp">
+   <br>
+   <label>Convert to:</label>
+
+   <br>
+   <input type="radio" name="convert" id="celsius">
+   <label>Celsius</label>
+
+   <br>
+   <input type="radio" name="convert" id="fahrenheit">
+   <label>Fahrenheit</label>
+
+   <br>
+   <br>
+   
+   <button id="myButton">Submit</button>
+   <br> <br>
+   <label id="myConvertedTemp"></label>
+
+   <script>
+
+      document.getElementById('myButton').onclick = () => {
+         let userTemp = document.getElementById('myTemp').value
+         const fahrenheit = document.getElementById('fahrenheit')
+         const celsius = document.getElementById('celsius')
+         const resultLabel = document.getElementById('myConvertedTemp')
+
+         conversor()
+         function conversor() {
+            if(fahrenheit.checked){
+               resultLabel.innerHTML = `${toFahrenheit(userTemp)} °F` 
+               
+            } else if (celsius.checked) {
+                  resultLabel.innerHTML = `${toCelsius(userTemp)} °C`
+               } else {
+                  resultLabel.innerHTML = "Select a unit"
+               }
+            }
+      }
+
+      let temp = 32;
+      temp = toFahrenheit(temp);
+      console.log(temp);
+
+      function toCelsius(temp){
+         return (temp - 32) * (5/9);
+      }
+
+      function toFahrenheit(temp) {
+         return temp * 9 / 5 + 32;
+      }
+   </script>
+</body>
+</html>
