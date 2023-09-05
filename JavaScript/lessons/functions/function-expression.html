@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Anonymous functions</title>
+
+</head>
+<body>
+
+   <label id="myLabel">0</label> <br>
+   <button id="decreaseButton">decrease</button>
+   <button id="increaseButton">increase</button>
+
+   <script>
+      // function expression = function without a name (anonymous function)
+      //                      avoid polluting the global scope with names
+      //                      Write it, then forget about it
+
+     let count = 0 
+
+     document.getElementById('decreaseButton').onclick = function(){
+         count -= 1;
+         document.getElementById('myLabel').innerHTML = count
+     }
+
+     document.getElementById('increaseButton').onclick = function(){
+         count += 1;
+         document.getElementById('myLabel').innerHTML = count
+     }
+   </script>
+</body>
+</html>

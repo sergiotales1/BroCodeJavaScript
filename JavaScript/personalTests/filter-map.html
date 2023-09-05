@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Filter - Map</title>
+   <script>
+      // we start with 3 numbers and get the square of each one storing them into a new array using map, after that we check which one square is bigger than 5 using filter creating another array finishing with a foreach to print the results
+
+      let numbers = [2, 3, 5]
+      let square = numbers.map(squares)
+      
+      let biggerThan5 = square.filter(check5)
+
+      biggerThan5.forEach(print)
+
+      function check5(element){
+         return element >= 5
+      }
+
+      function squares(element){
+         return Math.pow(element, 2)
+      }
+
+      function print(element){
+         console.log(element)
+      }
+
+      console.log(numbers, square, biggerThan5) // <-- the arrays created
+   </script>
+</head>
+<body>
+   
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Sort</title>
+   <script>
+      let grades = [100, 50, 60, 80, 90, 70]
+
+      grades = grades.sort(descendingSort)
+
+      grades.forEach(print)
+      
+      function ascendingSort(a, b){
+         return a - b
+      }
+
+      function descendingSort(a, b){
+         return b - a
+      }
+
+      function print(element){
+         console.log(element)
+      }
+   </script>
+</head>
+<body>
+   
+</body>
+</html>
