@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Nested Functions</title>
+   <script>
+   // nested functions = Functions inside other functions.
+   //                    Outer functions have acess to inner functions.
+   //                    Inner functions are "hidden" from outside the outer function.
+   //                    used in closures (future video topic)
+
+   let userName = "Bro"
+   let userInbox = 0
+   login()
+
+   function login(){
+      displayUserName()
+      displayUserInbox()
+      
+      function displayUserName(){
+         console.log(`Welcome ${userName}!`)
+      }
+   
+      function displayUserInbox(){
+         console.log(`You have ${userInbox} new messages.`)
+      }
+   }
+
+   </script>
+</head>
+<body>
+   
+</body>
+</html>

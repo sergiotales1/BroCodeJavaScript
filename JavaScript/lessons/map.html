@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Map</title>
+   <script>
+      // Map = object that holds key-value pairs of any data type.
+
+      const store = new Map([
+         ["t-shirt", 20],
+         ["jeans", 30],
+         ["socks", 10],
+         ["underwear", 50] 
+      ])
+
+      
+      // map methods: .get, .set, .delete, .has(smh), .size
+      
+      // store.set('hat', 40)
+      // store.delete('hat')
+      // console.log(store.has('underwear'))
+      // console.log(store.size)
+      
+      // let shoppingCart = 0;
+      // shoppingCart += store.get("t-shirt")
+      // shoppingCart += store.get("underwear")
+      // console.log(shoppingCart)
+
+      store.forEach((value, key) => {
+         console.log(`${key}: $${value}`)
+      })
+   </script>
+</head>
+<body>
+   
+</body>
+</html>
