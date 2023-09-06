@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Objects</title>
+   <script>
+   
+      class Car{
+         constructor(model, year, color){
+            this.model = model
+            this.year = year
+            this.color = color
+         }
+      }
+
+      const car1 = new Car("Mustang", 2023, "red")
+      const car2 = new Car("Corvette", 2024, "blue")
+      const car3 = new Car("Lambo", 2023, "yellow")
+
+      changeColor(car2, "green")
+      displayInfo(car2) 
+
+      function displayInfo(car){
+         console.log(car.model)
+         console.log(car.year) 
+         console.log(car.color)
+      }
+
+      function changeColor(car, color){
+         car.color = color
+      }
+   </script>
+</head>
+<body>
+   
+</body>
+</html>
