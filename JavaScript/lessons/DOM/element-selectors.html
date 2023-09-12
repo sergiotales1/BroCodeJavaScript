@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   
+   <h1 id="myTitle">This is the Menu</h1>
+
+   <input type="radio" name="fruits" value="apple" >
+   <label for="apple">apple</label><br>
+   <input type="radio" name="fruits" value="orange">
+   <label for="orange">orange</label><br>
+   <input type="radio" name="fruits" value="banana" checked="checked">
+   <label for="banana">banana</label><br>
+
+   <ul>
+      <li>carrots</li>
+      <li>potatoes</li>
+      <li>onions</li>
+   </ul>
+
+   <div class="desserts">ice cream</div>
+   <div class="desserts">cake</div>
+   <div class="desserts">pie</div>
+
+   <script>
+      let element = document.getElementById('myTitle')
+      element.style.backgroundColor = 'lightgreen'
+
+      let fruits = document.getElementsByName('fruits')
+
+      fruits.forEach(fruits => {
+         if(fruits.checked){
+            console.log(fruits.value)
+         }
+      })
+
+      vegetables = document.getElementsByTagName('li')
+      vegetables[0].style.backgroundColor = 'lightgreen'
+
+      let desserts = document.getElementsByClassName('desserts')
+      desserts[0].style.backgroundColor = 'lightblue'
+
+      // let element1 = document.querySelector('#myTitle')
+      // let element1 = document.querySelector('.desserts')
+      // let element1 = document.querySelector('[for]')  // the first element with for attribute
+
+      let element1 = document.querySelectorAll('li')
+      
+      element1.forEach(element => {
+         element.style.backgroundColor = 'orange'
+      })
+   </script>
+</body>
+</html>

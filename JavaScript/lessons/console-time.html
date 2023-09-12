@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Console Timer</title>
+
+</head>
+<body>
+   
+
+   <script>
+   // console.time() = Starts a timer you can use to 
+   //                  track how long an operation takes
+   //                  Given each timer a unique name.
+                     // ** synchronous!
+
+   //start 
+   console.time("Response time")
+   
+   // alert('CLICK THE OK BUTTON')
+   setTimeout(()=> console.log('Hello'), 3000)
+
+   //end
+   console.timeEnd("Response time")
+   </script>
+</body>
+</html>

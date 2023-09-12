@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Events</title>
+   <style>
+      #myDiv {
+         background-color: lightgreen;
+         width: 100px;
+         height: 100px;
+      }
+   </style>
+</head>
+<body>
+   <button id="myBtn">Click</button>
+   <input type="text" id="myText">
+
+   <div id="myDiv"></div>
+
+
+
+
+
+   <script>
+
+      // const element = document.getElementById('myBtn')
+      // const element = document.body
+      // const element = document.getElementById('myText')
+      const element = document.getElementById('myDiv')
+
+      // element.onclick = doSomething
+      // element.onload = doSomething
+      // element.onchange = doSomething
+      // element.onmouseover = doSomething
+      // element.onmouseout = doSomethingElse
+      element.onmousedown = doSomething
+      element.onmouseup = doSomethingElse
+
+      function doSomething(){
+         element.style.backgroundColor = 'red'
+      }
+
+      function doSomethingElse(){
+         element.style.backgroundColor = 'lightgreen'
+      }
+   </script>
+</body>
+</html>
