@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Animations</title>
+   <style>
+      #myDiv {
+         background-color: lightblue;
+         width: 100px;
+         height: 100px;
+         position: relative;
+      }
+   </style>
+</head>
+<body>
+   <button id="myBtn">Begin</button>
+   <div id="myDiv"></div>
+
+   <script>
+      const myButton = document.getElementById('myBtn')
+      const myAnimation = document.getElementById('myDiv')
+      let scaleX = 1
+      let scaleY = 1
+      
+      myButton.addEventListener('click', () =>{
+         let timerId = null
+
+         timerId = setInterval(frame, 5)
+
+         function frame(){
+            if(scaleX <= 0.1 || scaleY <= 0.1){
+               clearInterval(timerId)
+            } else {
+              scaleX -= 0.01
+              scaleY -= 0.01
+              myAnimation.style.transform = 'scale('+scaleX +','+scaleY+')'
+            }
+         }
+      })
+      
+      
+      
+
+      
+
+      
+
+      
+      
+      
+
+
+      
+      
+      /*
+      
+      myButton.addEventListener('click', () =>{
+         let timerId = null
+         let x = 0
+         let y = 0
+         
+         timerId = setInterval(frame, 5)
+         
+         function frame(){
+            if(x >= 200 || y >= 200){
+               clearInterval(timerId)
+            } else {
+               x++
+               y++
+               myAnimation.style.top = x + 'px'
+            }
+         }
+      })
+      
+      myButton.addEventListener('click', () =>{
+         let timerId = null
+
+         timerId = setInterval(frame, 5)
+
+         function frame(){
+            if(x >= 200 || y >= 200){
+               clearInterval(timerId)
+            } else {
+              degrees +=10
+              x++
+              y++
+              myAnimation.style.left = x + 'px'
+              myAnimation.style.top = y + 'px'
+              myAnimation.style.transform = 'rotateZ('+degrees+'deg)'
+            }
+         }
+      })
+      myAnimation.style.left = x + 'px'
+      */
+   </script>
+</body>
+</html>
