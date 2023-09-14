@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Rock Paper Scissors</title>
+   <style>
+      body {
+         background-color: #d1d1d1;
+      }
+      #gameDiv {
+         font-family: cursive;
+         width: 400px;
+         margin: 0 auto;
+         border: 3px solid aqua;
+         border-radius: 25px;
+         text-align: center;
+         background-color: lightgoldenrodyellow;
+         padding: 20px;
+      }
+
+      button {
+         padding: 10px;
+         margin-left: 5px;
+         line-height: 20px;
+         width: 90px;
+         cursor: pointer;
+      }
+
+      #playerText {
+         color: rgb(86, 150, 86);
+      }
+
+      #computerText {
+         color: salmon;
+      }
+   </style>
+</head>
+<body>
+   <div id="gameDiv">
+      <h1 class="gameText" id="playerText">Player: </h1>
+      <h1 class="gameText" id="computerText">Computer: </h1>
+      <h1 class="gameText" id="resultText">Result: </h1>
+
+      <button class="choiceBtn">ROCK</button>
+
+      <button class="choiceBtn">PAPER</button>
+
+      <button class="choiceBtn">SCISSORS</button>
+   </div>
+
+   <script>
+      const playerText = document.querySelector('#playerText')
+      const computerText = document.querySelector('#computerText')
+      const resultText = document.querySelector('#resultText')
+      const choiceBtns = document.querySelectorAll('.choiceBtn')
+
+      let player;
+      let computer;
+      let result;
+
+      choiceBtns.forEach((button) => button.addEventListener('click', ()=>{
+         
+         player = button.textContent
+         computerTurn()
+         playerText.textContent = `Player: ${player}`
+         computerText.textContent = `Computer: ${computer}`
+         resultText.textContent = checkWinner()
+         console.log(player, computer)
+      }))
+
+      function computerTurn(){
+         const randNum = Math.floor(Math.random() * 3 + 1) // need to add +1 because it could be 0
+         // console.log(randNum)
+
+         switch(randNum){
+            case 1:
+               computer = 'ROCK'
+               break
+            case 2:
+               computer = 'PAPER'
+               break
+            case 3:
+               computer = 'SCISSORS'
+               break
+         }
+
+      }
+
+      function checkWinner(){
+         if(player === computer){
+            return 'Draw!'
+
+         } else if (computer === 'ROCK'){
+            return (player == 'PAPER' ? "You Win!" : 'You Lose!')
+
+         } else if (computer === 'PAPER'){
+            return (player == 'SCISSORS' ? "You Win!" : 'You Lose!')
+
+         } else if (computer === 'SCISSORS'){
+            return (player == 'ROCK' ? "You Win!" : 'You Lose!')
+         }
+      }
+   </script>
+</body>
+</html>
